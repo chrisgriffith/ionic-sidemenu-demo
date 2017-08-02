@@ -1,0 +1,41 @@
+<ion-split-pane when="xs">
+  <!--  our side menu  -->
+  <ion-menu [content]="content">
+    <ion-content>
+      <div class="centervert">
+        <button ion-button large block clear icon-only [color]="isList ? 'primary' : 'light'" (click)="togglePage('List')">
+        <ion-icon name="md-list"></ion-icon>
+      </button>
+        <button ion-button large block clear icon-only [color]="isLocation ? 'primary' : 'light'" (click)="togglePage('Location')">
+        <ion-icon name="md-pin"></ion-icon>
+      </button>
+        <button ion-button large block clear icon-only [color]="isSelf ? 'primary' : 'light'" (click)="togglePage('Self')">
+        <ion-icon name="md-person"></ion-icon>
+      </button>
+        <button ion-button large block clear icon-only [color]="isNotifications ? 'primary' : 'light'" (click)="togglePage('Notifications')">
+        <ion-icon name="md-notifications"></ion-icon>
+      </button>
+        <button ion-button large block clear icon-only [color]="isSearch ? 'primary' : 'light'" (click)="togglePage('Search')">
+        <ion-icon name="md-search"></ion-icon>
+      </button>
+        <button ion-button large block clear icon-only [color]="isCamera ? 'primary' : 'light'" (click)="togglePage('Camera')">
+        <ion-icon name="md-camera"></ion-icon>
+      </button>
+        
+      </div>
+
+    </ion-content>
+    <ion-footer>
+      <button ion-button large block clear icon-only>
+        <ion-icon name="settings"></ion-icon>
+      </button>
+      <button ion-button large block clear icon-only>
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-footer>
+
+  </ion-menu>
+
+  <!-- the main content -->
+  <ion-nav [root]="rootPage" main #content></ion-nav>
+</ion-split-pane>
